@@ -127,7 +127,7 @@ public class ExpressionComposite extends Composite {
 	private void createExpressionEditingTextBox(Composite composite_1) {
 		Composite composite = new Composite(composite_1, SWT.NONE);
 		composite.setLayout(new GridLayout(2, false));
-		GridData gd_composite = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
+		GridData gd_composite = new GridData(SWT.FILL, SWT.TOP, false, false, 1, 1);
 		gd_composite.heightHint = 29;
 		composite.setLayoutData(gd_composite);
 
