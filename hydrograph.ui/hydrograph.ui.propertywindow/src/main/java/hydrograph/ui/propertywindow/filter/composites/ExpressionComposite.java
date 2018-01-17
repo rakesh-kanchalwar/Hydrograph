@@ -137,8 +137,7 @@ public class ExpressionComposite extends Composite {
 		logicTextBox.setText(expressionDataStructure.getExpressionEditorData().getExpression());
 
 		Button openEditorButton = new Button(composite, SWT.NONE);
-		GridData gd_openEditorButton = new GridData(SWT.RIGHT, SWT.CENTER
-				,false, false);
+		GridData gd_openEditorButton = new GridData(SWT.RIGHT, SWT.TOP,false, false);
 		gd_openEditorButton.heightHint = 25;
 		
 		if(OSValidator.isMac()){
