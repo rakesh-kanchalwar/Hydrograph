@@ -15,6 +15,7 @@ import org.eclipse.swt.widgets.Text;
 
 import hydrograph.ui.common.datastructure.filter.ExpressionData;
 import hydrograph.ui.common.util.FilterLogicExternalOperationExpressionUtil;
+import hydrograph.ui.common.util.OSValidator;
 import hydrograph.ui.datastructure.expression.ExpressionEditorData;
 import hydrograph.ui.datastructure.property.ComponentsOutputSchema;
 import hydrograph.ui.datastructure.property.mapping.ExternalWidgetData;
@@ -127,7 +128,7 @@ public class ExpressionComposite extends Composite {
 		Composite composite = new Composite(composite_1, SWT.NONE);
 		composite.setLayout(new GridLayout(2, false));
 		GridData gd_composite = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
-		gd_composite.heightHint = 29;
+		//gd_composite.heightHint = 29;
 		composite.setLayoutData(gd_composite);
 
 		logicTextBox = new Text(composite, SWT.BORDER);
@@ -136,6 +137,18 @@ public class ExpressionComposite extends Composite {
 		logicTextBox.setText(expressionDataStructure.getExpressionEditorData().getExpression());
 
 		Button openEditorButton = new Button(composite, SWT.NONE);
+		GridData gd_openEditorButton = new GridData(SWT.RIGHT, SWT.CENTER
+				,false, false);
+		gd_openEditorButton.heightHint = 25;
+		
+		if(OSValidator.isMac()){
+			gd_openEditorButton.widthHint = 43;
+			gd_openEditorButton.horizontalIndent = -5;
+		}
+		else{
+			gd_openEditorButton.widthHint = 30;
+		}
+		openEditorButton.setLayoutData(gd_openEditorButton);
 		openEditorButton.setText("...");
 		openEditorButton.addSelectionListener(new SelectionAdapter() {
 			@Override
