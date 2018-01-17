@@ -127,8 +127,8 @@ public class ExpressionComposite extends Composite {
 	private void createExpressionEditingTextBox(Composite composite_1) {
 		Composite composite = new Composite(composite_1, SWT.NONE);
 		composite.setLayout(new GridLayout(2, false));
-		GridData gd_composite = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
-		//gd_composite.heightHint = 29;
+		GridData gd_composite = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
+		gd_composite.heightHint = 29;
 		composite.setLayoutData(gd_composite);
 
 		logicTextBox = new Text(composite, SWT.BORDER);
@@ -137,7 +137,7 @@ public class ExpressionComposite extends Composite {
 		logicTextBox.setText(expressionDataStructure.getExpressionEditorData().getExpression());
 
 		Button openEditorButton = new Button(composite, SWT.NONE);
-		GridData gd_openEditorButton = new GridData(SWT.RIGHT, SWT.TOP,false, false);
+		/*GridData gd_openEditorButton = new GridData(SWT.RIGHT, SWT.TOP,false, false);
 		gd_openEditorButton.heightHint = 25;
 		
 		if(OSValidator.isMac()){
@@ -147,7 +147,7 @@ public class ExpressionComposite extends Composite {
 		else{
 			gd_openEditorButton.widthHint = 30;
 		}
-		openEditorButton.setLayoutData(gd_openEditorButton);
+		openEditorButton.setLayoutData(gd_openEditorButton);*/
 		openEditorButton.setText("...");
 		openEditorButton.addSelectionListener(new SelectionAdapter() {
 			@Override
